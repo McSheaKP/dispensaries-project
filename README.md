@@ -29,8 +29,8 @@ You have two options to access the dataset:
 
 ### Submission
 
-- GitHub Repository: Fork this repository and submit a Pull Request with your changes when you’re ready. We’ll be
-  eagerly awaiting your submission!
+- GitHub Repository: Fork this repository and send us the link to your repo/branch when ready. This repository is public
+  so please do not submit your changes in the form of a PR to this repository. We’ll be eagerly awaiting your submission!
 - README: Ensure your repository includes a README that explains how to set up the project, a brief description of the
   application, and usage instructions.
 - Video Demo: Record a short video (up to 5 minutes) demonstrating your application and its features.
