@@ -1,0 +1,22 @@
+<div  class="card-container">
+    <mat-card class="dispensary-card" appearance="raised" *ngFor="let dispensary of dispensaryList">
+        <mat-card-header>
+        <div mat-card-avatar class="example-header-image" [style.background-image]="'url(' + dispensary.logoUrl + ')'" class="example-header-image"> 
+            
+        </div>
+       
+        <mat-card-title>{{dispensary.Name}}</mat-card-title>
+        <mat-card-subtitle>Rating: {{dispensary.Rating}}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src={{dispensary.Image}} alt="Photo of a Shiba Inu">
+        <mat-card-content>
+        <p>
+           {{dispensary.Description}}
+        </p>
+        </mat-card-content>
+        <!-- <mat-card-actions>
+        <button mat-button>LIKE</button>
+        <button mat-button>SHARE</button>
+        </mat-card-actions> -->
+    </mat-card>
+</div>

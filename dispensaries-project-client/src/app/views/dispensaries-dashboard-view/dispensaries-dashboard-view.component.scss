@@ -1,0 +1,24 @@
+.card-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 20px;
+  }
+  
+  mat-card {
+    width: 300px;
+    margin-bottom: 20px;
+    background-color: white;
+    border: 1em;
+  }
+  
+  mat-card-content {
+    height: 100px; /* Adjust as needed */
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+  }
