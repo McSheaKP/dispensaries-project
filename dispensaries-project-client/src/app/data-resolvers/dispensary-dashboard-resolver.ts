@@ -3,7 +3,7 @@ import { ActivatedRouteSnapshot, Resolve } from '@angular/router';
 import { catchError } from 'rxjs/operators';
 import { Observable, throwError } from 'rxjs';
 import { DispenariesDashboardApiService } from '../services/dispenaries-dashboard-api.service';
-import { Dispensary } from '../services/dispenaries.types';
+import { IDispensaryBackend } from '../services/dispenary-backend.types';
 
 @Injectable({
   providedIn: 'root',
@@ -11,7 +11,7 @@ import { Dispensary } from '../services/dispenaries.types';
 export class DispensayDashboardResolver {
   constructor(private _dispensaryDashboardApiService: DispenariesDashboardApiService) {}
 
-  resolve(route: ActivatedRouteSnapshot): Observable<Dispensary[]> {
+  resolve(route: ActivatedRouteSnapshot): Observable<IDispensaryBackend[]> {
     return this._dispensaryDashboardApiService
       .getItems()
       .pipe(
