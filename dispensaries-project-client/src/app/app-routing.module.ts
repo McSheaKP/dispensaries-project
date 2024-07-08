@@ -13,7 +13,7 @@ const routes: Routes = [
     resolve: { dispensaries: DispensayDashboardResolver },
   },
   {
-    path: 'store/:storeName',
+    path: ':storeName',
     component: DispensaryStorefrontViewComponent,
     resolve: { dispensaries: DispensayStorefrontResolver },
   },

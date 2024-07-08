@@ -15,6 +15,6 @@ export class DispensaryCardComponent {
 
   navigateToStore(dispenary: Dispensary): void {
     console;
-    this.router.navigate(['/store', dispenary.name]);
+    this.router.navigate(['', dispenary.name]);
   }
 }
