@@ -1,43 +1,19 @@
 <div class="hero-image">
   <div class="hero-text">
     <h1>Dispensaries Dashboard</h1>
-    <p>Find your Local Cannibis Dispensary Today</p>
+    <p>Find Your Local Cannibis Dispensary Today</p>
   </div>
 </div>
+<dispensary-filter
+  [dispensaryFormModel]="dispensaryFilterFormModel"
+  [dispensaries]="dispensaryNameList"
+>
+</dispensary-filter>
 
 <div class="card-container">
-  <mat-card
-    class="dispensary-card"
-    appearance="raised"
-    *ngFor="let dispensary of dispensaryList"
+  <dispensary-card
+    *ngFor="let dispensary of dispensaryList.results"
+    [dispensary]="dispensary"
   >
-    <mat-card-header>
-      <div
-        *ngIf="dispensary.logoUrl"
-        mat-card-avatar
-        class="example-header-image"
-        [style.background-image]="'url(' + dispensary.logoUrl + ')'"
-        class="example-header-image"
-      ></div>
-
-      <mat-card-title>{{ dispensary.Name }}</mat-card-title>
-      <mat-card-subtitle font-color: black>
-        Rating: {{ dispensary.Rating }}</mat-card-subtitle
-      >
-    </mat-card-header>
-
-    <img *ngIf="dispensary.Image" mat-card-image src="{{ dispensary.Image }}" />
-
-    <mat-card-content>
-      <a href="{{ dispensary.Website }}">{{ dispensary.Name }}</a>
-      <br />
-      <p>Phone Number: {{ dispensary.Phone }}</p>
-
-      <a href="mailto:{{ dispensary.Email }}">{{ dispensary.Email }}</a>
-    </mat-card-content>
-    <!-- <mat-card-actions>
-        <button mat-button>LIKE</button>
-        <button mat-button>SHARE</button>
-        </mat-card-actions> -->
-  </mat-card>
+  </dispensary-card>
 </div>

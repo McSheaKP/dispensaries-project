@@ -1,0 +1,47 @@
+<div
+  class="hero-image"
+  [ngStyle]="{ 'background-image': 'url(' + dispensary.image + ')' }"
+>
+  <div class="hero-text">
+    <!-- <h1>Dispensaries Dashboard</h1>
+      <p>Find your Local Cannibis Dispensary Today</p> -->
+  </div>
+</div>
+<div>
+  <mat-card class="dispensary-card" appearance="raised">
+    <mat-card-header>
+      <mat-card-title>
+        <h2>{{ dispensary.name }}</h2>
+      </mat-card-title>
+      <mat-card-subtitle font-color: black>
+        <h3>Rating: {{ dispensary.rating }}</h3>
+      </mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      <div class="dispensary-info">
+        <div>
+          <h3>Dispensary Info</h3>
+          <a href="{{ dispensary.website }}">{{ dispensary.name }}</a>
+          <br />
+          <p>Phone Number: {{ dispensary.phone }}</p>
+
+          <a href="mailto:{{ dispensary.email }}">{{ dispensary.email }}</a>
+        </div>
+        <div class="address-info">
+          <h3>Address</h3>
+          <p>Street Address: {{ dispensary.address1 }}</p>
+          <p *ngIf="dispensary.address2">{{ dispensary.address2 }}</p>
+          <p>City: {{ dispensary.city }}</p>
+          <p>Country: {{ dispensary.country }}</p>
+          <p>Postal Code: {{ dispensary.postalCode }}</p>
+        </div>
+      </div>
+    </mat-card-content>
+    <br />
+    <mat-card-content>
+      <h3>Description</h3>
+      <p>{{ dispensary.description }}</p>
+    </mat-card-content>
+  </mat-card>
+</div>

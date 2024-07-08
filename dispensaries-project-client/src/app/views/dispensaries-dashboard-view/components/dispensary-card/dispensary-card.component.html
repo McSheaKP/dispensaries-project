@@ -1,1 +1,36 @@
-<p>dispensary-card works!</p>
+<mat-card
+  class="dispensary-card"
+  appearance="raised"
+  (click)="navigateToStore(dispensary)"
+>
+  <mat-card-header>
+    <div
+      *ngIf="dispensary.logoUrl"
+      mat-card-avatar
+      class="example-header-image"
+      [style.background-image]="'url(' + dispensary.logoUrl + ')'"
+      class="example-header-image"
+    ></div>
+    <mat-card-title>{{ dispensary.name }}</mat-card-title>
+    <mat-card-subtitle font-color: black>
+      Rating: {{ dispensary.rating }}</mat-card-subtitle
+    >
+  </mat-card-header>
+
+  <img *ngIf="dispensary.image" mat-card-image src="{{ dispensary.image }}" />
+
+  <mat-card-content>
+    <h4>Contact Information:</h4>
+    <a href="{{ dispensary.website }}" (click)="$event.stopPropagation()">{{
+      dispensary.name
+    }}</a>
+    <br />
+    <p>Phone Number: {{ dispensary.phone }}</p>
+
+    <a
+      href="mailto:{{ dispensary.email }}"
+      (click)="$event.stopPropagation()"
+      >{{ dispensary.email }}</a
+    >
+  </mat-card-content>
+</mat-card>

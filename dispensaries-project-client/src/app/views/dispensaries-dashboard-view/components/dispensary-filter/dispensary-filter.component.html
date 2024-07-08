@@ -1,0 +1,38 @@
+<form [formGroup]="dispensaryFormModel.formGroup" #formEle>
+  <div class="filters-container">
+    <h2>Filter:</h2>
+    <div class="slider-container">
+      <h3>Min Star Rating</h3>
+      <mat-slider
+        min="0"
+        max="5"
+        step=".01"
+        showTickMarks
+        discrete
+        [displayWith]="formatLabel"
+      >
+        <input matSliderThumb formControlName="rating" />
+      </mat-slider>
+    </div>
+    <mat-divider
+      [vertical]="true"
+      style="--mat-divider-width: 5px"
+    ></mat-divider>
+    <h2>Search:</h2>
+    <mat-form-field>
+      <mat-label>Store Name</mat-label>
+      <input
+        type="text"
+        matInput
+        placeholder="Search By Store Name"
+        formControlName="search"
+        [matAutocomplete]="auto"
+      />
+      <mat-autocomplete #auto="matAutocomplete">
+        @for (option of filteredOptions | async; track option) {
+        <mat-option [value]="option">{{ option }}</mat-option>
+        }
+      </mat-autocomplete>
+    </mat-form-field>
+  </div>
+</form>

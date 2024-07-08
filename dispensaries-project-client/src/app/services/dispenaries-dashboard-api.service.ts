@@ -1,47 +1,30 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, map, scheduled } from 'rxjs';
+import { Observable, catchError, map, share, throwError } from 'rxjs';
 import { IDispensaryBackend } from './dispenary-backend.types';
-//import { IDispensaryClient } from './dispensary-client.types';
-
+import { Dispensaries } from './dispensary-client.types';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class DispenariesDashboardApiService {
-
-  private apiUrl = 'assets/dispensaries.json'
+  private apiUrl = 'assets/dispensaries.json';
   constructor(private http: HttpClient) {}
 
-  // getLineItem(): Observable<PurchaseOrderLineItem> {
-  //   return this._http
-  //     .get<PurchaseOrderLineItemBackend>(`${this.apiBase}/${id}`)
-  //     .pipe(
-  //       map((resp: PurchaseOrderLineItemBackend) =>
-  //         PurchaseOrderLineItem.fromBackend(resp)
-  //       ),
-  //       share() // make hot to avoid multiple subscriptions creating multiple requests
-  //     );
-  // }
-  getItems(): Observable<any> {
-    return this.http.get<IDispensaryBackend[]>(this.apiUrl)
-    // .pipe(
-    //   map((dispensaryList: IDispensaryBackend[]) => {
+  getItems(): Observable<Dispensaries> {
+    const request = this.http.get<IDispensaryBackend[]>(this.apiUrl).pipe(
+      catchError((res) => {
+        if (res.error) {
+          console.error(res.error);
+        }
+        return throwError(res);
+      }),
+      map((resp: IDispensaryBackend[]) => {
+        return Dispensaries.fromBackend(resp);
+      }),
+      share() // make hot to avoid multiple subscriptions creating multiple requests
+    );
 
-    //     dispensaryList.map((dispensary: IDispensaryBackend) => {
-    //       console.log(typeof dispensary.Menu)
-    //       console.log('dispensary',dispensary)
-    //       console.log(dispensary.Menu)
-    //       console.log(dispensary.Menu.length)
-    //       // if(dispensary.Menu.length > 2){
-    //       //   const convetedData = this.convertToJSON(dispensary.Menu)  
-    //       //   console.log('CONVERTED DATA: ',convetedData)
-    //       //   console.log(dispensary.Menu)        
-    //       // }
-          
-         
-    //     })
-    //   })
-    //)
+    return request;
   }
 }

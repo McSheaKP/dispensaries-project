@@ -1,0 +1,41 @@
+//FILTERS COmponent
+.filters-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  .slider-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  h3 {
+    padding-right: 20px;
+  }
+
+  h2 {
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    padding: 30px;
+    margin: 0 0 0;
+    white-space: nowrap;
+  }
+}
+
+mat-slider {
+  width: 200px;
+}
+
+mat-divider {
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-right: 20px;
+  margin-top: 10px;
+}
+
+mat-form-field {
+  width: 400px;
+}
