@@ -14,7 +14,6 @@ export class DispensaryCardComponent {
   constructor(private router: Router) {}
 
   navigateToStore(dispenary: Dispensary): void {
-    console;
-    this.router.navigate(['', dispenary.name]);
+    this.router.navigate(['/store', dispenary._id.$oid]);
   }
 }

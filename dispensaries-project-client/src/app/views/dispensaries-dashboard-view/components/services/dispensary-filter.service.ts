@@ -17,6 +17,14 @@ export class DispensaryFilterService {
     return dispensariesList;
   }
 
+  filterDispensariesById(id: string): Dispensary[] {
+    let dispensariesList = [...this.dispensariesListCache];
+    dispensariesList = dispensariesList.filter(
+      (dispensary: Dispensary) => dispensary._id.$oid == id
+    );
+    return dispensariesList;
+  }
+
   filterDispensariesWhenSelectedStoreName(storeName: string): Dispensary[] {
     let dispensariesList = [...this.dispensariesListCache];
     dispensariesList = dispensariesList.filter(
