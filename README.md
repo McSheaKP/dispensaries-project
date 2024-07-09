@@ -15,9 +15,9 @@ Angular CLI.
 Install with npm install -g @angular/cli
 
 Instructions:
-Pull down cloned repo
-npm install
-ng serve
+- Pull down cloned repo
+- npm install
+- ng serve
 
 ## Dispensary Project
 
