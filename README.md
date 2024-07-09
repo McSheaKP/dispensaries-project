@@ -10,9 +10,9 @@ Main Features:
 
 ### Setup
 Requirements:
-Node.js LTS
-Angular CLI.
-Install with npm install -g @angular/cli
+- Node.js LTS
+- Angular CLI.
+- Install with npm install -g @angular/cli
 
 Instructions:
 - Pull down cloned repo
