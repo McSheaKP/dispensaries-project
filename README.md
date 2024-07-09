@@ -2,6 +2,27 @@
 
 ### Introduction
 
+This project is an Client Only Angular Application intended to work as a basic dashboard search for the mock dataset of local dispensaries
+Main Features:
+- Filtering by rating on dashboard
+- Searching by name on main page
+- Viewing basic storefront page  
+
+### Setup
+Requirements:
+Node.js LTS
+Angular CLI.
+Install with npm install -g @angular/cli
+
+Instructions:
+Pull down cloned repo
+npm install
+ng serve
+
+## Dispensary Project
+
+### Introduction
+
 Welcome! We're thrilled that you're considering joining our team. To showcase your skills, we invite you to build an
 innovative application using the dataset provided below. This README.md outlines the expectations and requirements for
 your project.
