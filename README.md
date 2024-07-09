@@ -19,7 +19,9 @@ Instructions:
 - npm install
 - ng serve
 
-## Dispensary Project
+### Video Demo
+https://github.com/McSheaKP/dispensaries-project/assets/6380047/b7872fa3-874c-4adb-afd0-7d32d5f78697
+
 
 ### Introduction
 
