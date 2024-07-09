@@ -10,11 +10,9 @@ export class DispensayStorefrontResolver {
   constructor(private _dispensaryFilterService: DispensaryFilterService) {}
 
   resolve(route: ActivatedRouteSnapshot): Dispensary[] {
-    console.log(route.params['id']);
     const dispensary = this._dispensaryFilterService.filterDispensariesById(
       route.params['id']
     );
-    console.log(dispensary);
     return dispensary;
   }
 }

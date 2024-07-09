@@ -11,6 +11,5 @@ export class DispensaryStorefrontViewComponent {
   public dispensary: Dispensary;
   constructor(private _route: ActivatedRoute) {
     this.dispensary = this._route.snapshot.data['dispensaries'][0];
-    console.log(this.dispensary);
   }
 }

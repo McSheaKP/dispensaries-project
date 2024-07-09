@@ -33,7 +33,6 @@ export class DispensariesDashboardViewComponent {
   setupFormControlChanges(): void {
     this.dispensaryFilterFormModel.formGroup.controls.search.valueChanges.subscribe(
       (name: string | null) => {
-        console.log(name);
         if (name !== null && this.dispensaryNameList.includes(name)) {
           this.dispensaryList.results =
             this._dispensaryFilterService.filterDispensariesWhenSelectedStoreName(
@@ -50,7 +49,6 @@ export class DispensariesDashboardViewComponent {
 
   setupData(): void {
     this.dispensaryList = this._route.snapshot.data['dispensaries'];
-    console.log(this.dispensaryList);
     this.formControlDispensaryList =
       this._route.snapshot.data['dispensaries'].results;
 
